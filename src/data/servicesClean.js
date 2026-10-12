@@ -1,7 +1,7 @@
 const image = (id) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1200&q=82`;
 const makePackages = (base, mid, premium) => [
   { name: 'Essential Protection', price: base, warranty: '2 Years', recommendedFor: 'Daily driving' },
-  { name: 'Mafia Signature', price: mid, warranty: '5 Years', recommendedFor: 'Premium ownership' },
+  { name: 'Kings Signature', price: mid, warranty: '5 Years', recommendedFor: 'Premium ownership' },
   { name: 'Elite Armour', price: premium, warranty: '7 Years', recommendedFor: 'Maximum protection' },
 ];
 

@@ -16,7 +16,7 @@ export const FAQS = [
   },
   {
     question: "Do you offer warranty and free maintenance check-ups?",
-    answer: "Yes! Every warranty package at The Detailing Mafia is linked to a nationwide computerized warranty card accepted at any of our 150+ outlets across India. Ceramic packages come with annual maintenance top-coats, and PPF packages feature free 1-month and 6-month edge inspections.",
+    answer: "Yes! Every warranty package at THE DETAILING Kings is linked to a nationwide computerized warranty card accepted at any of our 150+ outlets across India. Ceramic packages come with annual maintenance top-coats, and PPF packages feature free 1-month and 6-month edge inspections.",
     category: "Warranty"
   },
   {
@@ -47,7 +47,7 @@ export const FRANCHISE_INFO = {
       popular: true
     },
     {
-      name: "Mafia Mega Hub",
+      name: "Kings Mega Hub",
       space: "4,000+ sq ft",
       investment: "₹65 - 85 Lakhs",
       bays: "6+ Bays + Mechanical Detailing + Dyno Lounge",

@@ -1,7 +1,7 @@
 export const OUTLETS = [
   {
     id: "delhi-okhla",
-    name: "The Detailing Mafia - Okhla (Flagship HQ)",
+    name: "THE DETAILING Kings - Okhla (Flagship HQ)",
     city: "New Delhi",
     state: "Delhi NCR",
     address: "Plot A-54, Phase II, Okhla Industrial Area, Near Crown Plaza",
@@ -15,7 +15,7 @@ export const OUTLETS = [
   },
   {
     id: "noida-sec63",
-    name: "The Detailing Mafia - Noida Sector 63",
+    name: "THE DETAILING Kings - Noida Sector 63",
     city: "Noida",
     state: "Delhi NCR",
     address: "C-24, Sector 63, Near Electronic City Metro Station",
@@ -29,7 +29,7 @@ export const OUTLETS = [
   },
   {
     id: "gurgaon-golfcourse",
-    name: "The Detailing Mafia - Gurgaon Golf Course",
+    name: "THE DETAILING Kings - Gurgaon Golf Course",
     city: "Gurugram",
     state: "Delhi NCR",
     address: "Opp. Paras Hospital, Sector 43, Golf Course Road",
@@ -43,7 +43,7 @@ export const OUTLETS = [
   },
   {
     id: "mumbai-andheri",
-    name: "The Detailing Mafia - Andheri West",
+    name: "THE DETAILING Kings - Andheri West",
     city: "Mumbai",
     state: "Maharashtra",
     address: "Link Road, Opp. Infiniti Mall, Andheri West",
@@ -57,7 +57,7 @@ export const OUTLETS = [
   },
   {
     id: "mumbai-bandra",
-    name: "The Detailing Mafia - Bandra Linking Rd",
+    name: "THE DETAILING Kings - Bandra Linking Rd",
     city: "Mumbai",
     state: "Maharashtra",
     address: "Shop 4, Ground Floor, Near National College, Bandra West",
@@ -71,7 +71,7 @@ export const OUTLETS = [
   },
   {
     id: "pune-baner",
-    name: "The Detailing Mafia - Baner Highway",
+    name: "THE DETAILING Kings - Baner Highway",
     city: "Pune",
     state: "Maharashtra",
     address: "Near Balewadi High Street, Mumbai-Bangalore Highway, Baner",
@@ -85,7 +85,7 @@ export const OUTLETS = [
   },
   {
     id: "bangalore-koramangala",
-    name: "The Detailing Mafia - Koramangala",
+    name: "THE DETAILING Kings - Koramangala",
     city: "Bengaluru",
     state: "Karnataka",
     address: "80 Feet Road, 4th Block, Koramangala (Opp. Sony World)",
@@ -99,7 +99,7 @@ export const OUTLETS = [
   },
   {
     id: "bangalore-whitefield",
-    name: "The Detailing Mafia - Whitefield ITPL",
+    name: "THE DETAILING Kings - Whitefield ITPL",
     city: "Bengaluru",
     state: "Karnataka",
     address: "ITPL Main Road, Pattandur Agrahara, Whitefield",
@@ -113,7 +113,7 @@ export const OUTLETS = [
   },
   {
     id: "hyderabad-jubileehills",
-    name: "The Detailing Mafia - Jubilee Hills",
+    name: "THE DETAILING Kings - Jubilee Hills",
     city: "Hyderabad",
     state: "Telangana",
     address: "Road No. 36, Jubilee Hills, Near Peddamma Temple Metro",
@@ -127,7 +127,7 @@ export const OUTLETS = [
   },
   {
     id: "chandigarh-industrial",
-    name: "The Detailing Mafia - Chandigarh Tri-City",
+    name: "THE DETAILING Kings - Chandigarh Tri-City",
     city: "Chandigarh",
     state: "Punjab / Haryana",
     address: "Plot 182/22, Industrial Area Phase 1, Chandigarh",

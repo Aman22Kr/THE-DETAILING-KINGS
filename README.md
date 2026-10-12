@@ -1,4 +1,4 @@
-# The Detailing Mafia — Static React Experience
+# THE DETAILING Kings — Static React Experience
 
 A responsive Vite + React + Tailwind single-page experience modelled after a premium vehicle protection studio. The app is designed for static hosting on GitHub Pages.
 

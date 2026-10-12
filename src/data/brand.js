@@ -1,9 +1,9 @@
 export const BRAND_INFO = {
-  name: "The Detailing Mafia",
+  name: "THE DETAILING Kings",
   tagline: "India's #1 Premium Car Detailing & Paint Protection Studio",
   phone: "+91 80-100-44000",
   tollFree: "1800-258-5959",
-  email: "info@thedetailingmafia.com",
+  email: "info@thedetailingkings.com",
   hq: "A-54, Okhla Industrial Area Phase-II, New Delhi, India",
   stats: {
     studios: "150+",

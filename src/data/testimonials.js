@@ -39,7 +39,7 @@ export const TESTIMONIALS = [
     car: "Mercedes-Benz S-Class (W223)",
     rating: 5,
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
-    comment: "Took my brand new S-Class straight from the showroom to The Detailing Mafia Okhla for full body UltrashieldX PPF. The precision wrap installation without removing body panels or badge razor cuts was exemplary. The gloss is unbelievable!",
+    comment: "Took my brand new S-Class straight from the showroom to THE DETAILING Kings Okhla for full body UltrashieldX PPF. The precision wrap installation without removing body panels or badge razor cuts was exemplary. The gloss is unbelievable!",
     verified: true,
     service: "UltrashieldX Full Body PPF"
   },
@@ -61,7 +61,7 @@ export const TESTIMONIALS = [
     car: "Thar Roxx 4x4",
     rating: 5,
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
-    comment: "I took my Thar for off-roading in Lonavala and had brush scratches all over the flanks. Mafia's 3-stage buffing and PPF application restored the factory deep gloss. They truly are masters of automotive detailing.",
+    comment: "I took my Thar for off-roading in Lonavala and had brush scratches all over the flanks. Kings's 3-stage buffing and PPF application restored the factory deep gloss. They truly are masters of automotive detailing.",
     verified: true,
     service: "Paint Correction & Full Body PPF"
   }
