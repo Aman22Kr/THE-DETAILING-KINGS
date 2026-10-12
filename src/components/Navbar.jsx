@@ -69,22 +69,24 @@ export default function Navbar() {
       {/* Main Header Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
         {/* Brand Logo */}
-        <div
+        <button
+          type="button"
           onClick={() => navigateTo('home')}
-          className="flex items-center space-x-3 cursor-pointer group"
+          className="flex items-center space-x-3 cursor-pointer group text-left"
+          aria-label="Go to home page"
         >
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-red to-red-800 flex items-center justify-center shadow-red-glow group-hover:scale-105 transition-transform">
             <Shield className="w-6 h-6 text-white" />
           </div>
           <div>
             <span className="text-xl sm:text-2xl font-extrabold tracking-wider text-white font-heading uppercase flex items-center gap-1">
-              THE <span className="text-brand-red">DETAILING</span> MAFIA
+              THE <span className="text-brand-red">DETAILING</span> KINGS
             </span>
             <span className="block text-[10px] uppercase tracking-widest text-brand-gold font-semibold">
               Perfection is in the Details
             </span>
           </div>
-        </div>
+        </button>
 
         <nav className="hidden lg:flex items-center gap-5">
           {navItems.map((item) => item.hasDropdown ? (

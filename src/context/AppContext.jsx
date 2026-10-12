@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
 
 const AppContext = createContext();
 
@@ -9,6 +9,28 @@ const LOCAL_STORAGE_KEYS = {
   FAVORITE_OUTLETS: 'tdm_favorite_outlets',
 };
 
+const readStoredArray = (key) => {
+  if (typeof window === 'undefined') return [];
+
+  try {
+    const stored = window.localStorage.getItem(key);
+    const parsed = stored ? JSON.parse(stored) : [];
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+};
+
+const saveStoredValue = (key, value) => {
+  if (typeof window === 'undefined') return;
+
+  try {
+    window.localStorage.setItem(key, JSON.stringify(value));
+  } catch {
+    // Storage can be unavailable in private browsing or when its quota is full.
+  }
+};
+
 export const AppProvider = ({ children }) => {
   const [currentPage, setCurrentPage] = useState('home');
   const [selectedServiceSlug, setSelectedServiceSlug] = useState(null);
@@ -17,66 +39,38 @@ export const AppProvider = ({ children }) => {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   
   const [toastMessage, setToastMessage] = useState(null);
+  const toastTimeoutRef = useRef(null);
 
-  // LocalStorage state initialization
-  const [savedBookings, setSavedBookings] = useState(() => {
-    try {
-      const stored = localStorage.getItem(LOCAL_STORAGE_KEYS.BOOKINGS);
-      return stored ? JSON.parse(stored) : [];
-    } catch {
-      return [];
-    }
-  });
+  const [savedBookings, setSavedBookings] = useState(() => readStoredArray(LOCAL_STORAGE_KEYS.BOOKINGS));
+  const [franchiseInquiries, setFranchiseInquiries] = useState(() => readStoredArray(LOCAL_STORAGE_KEYS.FRANCHISE_INQUIRIES));
+  const [contactMessages, setContactMessages] = useState(() => readStoredArray(LOCAL_STORAGE_KEYS.CONTACT_MESSAGES));
+  const [favoriteOutlets, setFavoriteOutlets] = useState(() => readStoredArray(LOCAL_STORAGE_KEYS.FAVORITE_OUTLETS));
 
-  const [franchiseInquiries, setFranchiseInquiries] = useState(() => {
-    try {
-      const stored = localStorage.getItem(LOCAL_STORAGE_KEYS.FRANCHISE_INQUIRIES);
-      return stored ? JSON.parse(stored) : [];
-    } catch {
-      return [];
-    }
-  });
-
-  const [contactMessages, setContactMessages] = useState(() => {
-    try {
-      const stored = localStorage.getItem(LOCAL_STORAGE_KEYS.CONTACT_MESSAGES);
-      return stored ? JSON.parse(stored) : [];
-    } catch {
-      return [];
-    }
-  });
-
-  const [favoriteOutlets, setFavoriteOutlets] = useState(() => {
-    try {
-      const stored = localStorage.getItem(LOCAL_STORAGE_KEYS.FAVORITE_OUTLETS);
-      return stored ? JSON.parse(stored) : [];
-    } catch {
-      return [];
-    }
-  });
-
-  // Sync to LocalStorage on updates
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEYS.BOOKINGS, JSON.stringify(savedBookings));
+    saveStoredValue(LOCAL_STORAGE_KEYS.BOOKINGS, savedBookings);
   }, [savedBookings]);
 
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEYS.FRANCHISE_INQUIRIES, JSON.stringify(franchiseInquiries));
+    saveStoredValue(LOCAL_STORAGE_KEYS.FRANCHISE_INQUIRIES, franchiseInquiries);
   }, [franchiseInquiries]);
 
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEYS.CONTACT_MESSAGES, JSON.stringify(contactMessages));
+    saveStoredValue(LOCAL_STORAGE_KEYS.CONTACT_MESSAGES, contactMessages);
   }, [contactMessages]);
 
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEYS.FAVORITE_OUTLETS, JSON.stringify(favoriteOutlets));
+    saveStoredValue(LOCAL_STORAGE_KEYS.FAVORITE_OUTLETS, favoriteOutlets);
   }, [favoriteOutlets]);
+
+  useEffect(() => () => clearTimeout(toastTimeoutRef.current), []);
 
   // Toast Helper
   const showToast = (text, type = 'success') => {
-    setToastMessage({ text, type, id: Date.now() });
-    setTimeout(() => {
-      setToastMessage(null);
+    clearTimeout(toastTimeoutRef.current);
+    const id = Date.now();
+    setToastMessage({ text, type, id });
+    toastTimeoutRef.current = setTimeout(() => {
+      setToastMessage((currentToast) => currentToast?.id === id ? null : currentToast);
     }, 4000);
   };
 
