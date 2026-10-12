@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0A0B0E;
+    color: #F1F5F9;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Oswald', 'Inter', sans-serif;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0B0E;
+}
+::-webkit-scrollbar-thumb {
+  background: #262936;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E31E24;
+}
+
+/* Shimmer & Glow Effects */
+.bg-carbon {
+  background-color: #0F1117;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.text-gradient-red {
+  background: linear-gradient(135deg, #FF3B30 0%, #E31E24 50%, #990000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FFE082 0%, #F7941D 60%, #D97B0D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.badge-glow {
+  box-shadow: 0 0 15px rgba(227, 30, 36, 0.5);
+}
+
+.btn-primary {
+  @apply relative inline-flex items-center justify-center font-bold uppercase tracking-wider text-white transition-all duration-300 bg-brand-red hover:bg-brand-red-dark active:scale-95 shadow-lg shadow-brand-red/30 hover:shadow-brand-red/50;
+}
+
+.btn-outline {
+  @apply relative inline-flex items-center justify-center font-bold uppercase tracking-wider text-white transition-all duration-300 border border-brand-border hover:border-brand-red hover:text-brand-red hover:bg-brand-red/10 active:scale-95;
+}
