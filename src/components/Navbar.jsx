@@ -85,3 +85,20 @@ export default function Navbar() {
             </span>
           </div>
         </div>
+
+        <nav className="hidden lg:flex items-center gap-5">
+          {navItems.map((item) => item.hasDropdown ? (
+            <div key={item.id} className="relative" onMouseEnter={() => setServicesDropdownOpen(true)} onMouseLeave={() => setServicesDropdownOpen(false)}>
+              <button onClick={() => navigateTo('services')} className="flex items-center gap-1 text-xs font-bold uppercase hover:text-brand-red">{item.label}<ChevronDown className="w-3 h-3" /></button>
+              {servicesDropdownOpen && <div className="absolute top-6 left-0 w-64 rounded-lg border border-brand-border bg-brand-surface py-2 shadow-2xl">{serviceLinks.map((service) => <button key={service.slug} onClick={() => navigateTo('service-detail', service.slug)} className="block w-full px-4 py-2 text-left text-xs hover:bg-brand-red/10 hover:text-brand-red">{service.title}</button>)}</div>}
+            </div>
+          ) : <button key={item.id} onClick={() => navigateTo(item.id)} className={`text-xs font-bold uppercase hover:text-brand-red ${currentPage === item.id ? 'text-brand-red' : ''}`}>{item.label}</button>)}
+        </nav>
+        <div className="hidden sm:flex items-center gap-2"><button onClick={() => setIsSearchOpen(true)} className="rounded border border-brand-border p-2 hover:text-brand-red"><Search className="w-4 h-4" /></button><button onClick={() => setIsBookingModalOpen(true)} className="btn-primary rounded px-4 py-2 text-xs"><Calendar className="mr-2 w-4 h-4" />Book Now</button></div>
+        <div className="flex sm:hidden gap-2"><button onClick={() => setIsSearchOpen(true)} className="p-2"><Search className="w-5 h-5" /></button><button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="p-2">{mobileMenuOpen ? <X/> : <Menu/>}</button></div>
+      </div>
+      {mobileMenuOpen && <div className="lg:hidden space-y-1 border-t border-brand-border bg-brand-dark p-4">{navItems.map((item) => <button key={item.id} onClick={() => { navigateTo(item.id); setMobileMenuOpen(false); }} className="block w-full p-3 text-left text-xs font-bold uppercase hover:bg-brand-surface">{item.label}</button>)}<button onClick={() => { setIsBookingModalOpen(true); setMobileMenuOpen(false); }} className="btn-primary mt-2 w-full rounded py-3 text-xs">Book Appointment</button></div>}
+    </header>
+  );
+}
+
